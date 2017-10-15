@@ -1,6 +1,6 @@
 class Player
-	def initialize()
-		@name = generate_name()
+	def initialize(game)
+		@name = game.pick_name()
 		@primary = generate_primary()
 		@secondary = generate_secondary()
 		@handgun = generate_handgun()
@@ -12,10 +12,6 @@ class Player
 
 	def name()
 		return @name
-	end
-
-	private def generate_name()
-		return Game::NAMES.sample
 	end
 
 	private def generate_primary()
