@@ -1,6 +1,6 @@
 class Player
-	def initialize(game)
-		@name = game.pick_name()
+	def initialize(name)
+		@name = name
 		@primary = generate_primary()
 		@secondary = generate_secondary()
 		@handgun = generate_handgun()
