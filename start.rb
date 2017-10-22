@@ -7,7 +7,7 @@ client = Twitter::REST::Client.new do |config|
 	config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
 end
 
-#client = LocalClient.new
+# client = LocalClient.new
 
 game = Game.new
 game.start(client)
