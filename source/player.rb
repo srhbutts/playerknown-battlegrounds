@@ -14,6 +14,10 @@ class Player
 		return @name
 	end
 
+	def to_s()
+		Oj.dump(instance_variables.map { |name| { name.to_s.gsub("@", "") => instance_variable_get(name) } }.reduce(&:merge))
+	end
+	
 	private def generate_primary()
 		return Game::WEAPONS.sample
 	end

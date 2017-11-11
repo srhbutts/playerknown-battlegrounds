@@ -10,6 +10,7 @@ class Game
 	def initialize()
 		@names = (TOTAL_PLAYERS * 1000).times.map do Generator.name() end.uniq().first(TOTAL_PLAYERS)
 		@players = generate_players(TOTAL_PLAYERS)
+		DATABASE.sadd("players", @players)
 	end
 
 	def start(client)
