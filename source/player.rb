@@ -1,4 +1,8 @@
 class Player
+	def self.from(json)
+		new(Oj.load(json).fetch("name"))
+	end
+	
 	def initialize(name)
 		@name = name
 		@primary = generate_primary()
